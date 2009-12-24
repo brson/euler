@@ -5,16 +5,16 @@ sumOfSquares xs = sum squares
       squares = map square xs
 
 squareOfSum :: [Float] -> Float
-squareOfSum xs = square (sum xs)
+squareOfSum = square . sum
 
 square :: Float -> Float
-square x = x ** 2.0
+square = (** 2.0)
 
 difference :: [Float] -> Float
-difference xs = (squareOfSum xs) - (sumOfSquares xs)
+difference xs = squareOfSum xs - sumOfSquares xs
 
 answer :: Int
-answer = truncate (difference [1..100])
+answer = truncate $ difference [1..100]
 
 main :: IO ()
 main = print answer
