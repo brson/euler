@@ -75,3 +75,9 @@ maxDiagUp = maxDiag' (reverse grid)
 
 gridMaximum :: Int
 gridMaximum = maximum [rowMaximum, columnMaximum, maxDiagDown, maxDiagUp]
+
+answer :: Int
+answer = gridMaximum
+
+main :: IO ()
+main = print gridMaximum
